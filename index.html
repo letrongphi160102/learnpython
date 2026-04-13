@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Mastery Academy — Complete University-Level Course</title>
+    <meta name="description" content="A comprehensive, university-level Python programming course covering fundamentals to advanced topics. Learn Python from scratch with interactive examples and hands-on exercises.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Ambient Background Effects -->
+    <div class="ambient-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="main-nav" class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" id="nav-logo">
+                <span class="logo-icon">🐍</span>
+                <span class="logo-text">Python<span class="logo-accent">Mastery</span></span>
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a href="#home" class="nav-link active" data-section="home">Home</a>
+                <a href="#curriculum" class="nav-link" data-section="curriculum">Curriculum</a>
+                <a href="#lessons" class="nav-link" data-section="lessons">Lessons</a>
+                <a href="#progress" class="nav-link" data-section="progress">Progress</a>
+            </div>
+            <div class="nav-actions">
+                <button id="lang-toggle" class="lang-btn" aria-label="Toggle language">
+                    <span class="lang-flag" id="lang-flag">🇬🇧</span>
+                    <span class="lang-label" id="lang-label">EN</span>
+                </button>
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle dark/light mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle navigation menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-container">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span data-i18n="heroBadge">University-Level Course • 2026 Edition</span>
+            </div>
+            <h1 class="hero-title">
+                <span data-i18n="heroTitle1">Master</span> <span class="gradient-text" data-i18n="heroTitleHighlight">Python</span> <span data-i18n="heroTitle2">Programming</span>
+                <br><span data-i18n="heroTitle3">From Zero to Expert</span>
+            </h1>
+            <p class="hero-subtitle" data-i18n="heroSubtitle">
+                A comprehensive, professional curriculum designed by IT professors. 
+                12 modules, 60+ lessons, hundreds of code examples — covering everything from 
+                basic syntax to advanced software engineering.
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="stat-modules">12</span>
+                    <span class="stat-label" data-i18n="statModules">Modules</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="stat-lessons">60+</span>
+                    <span class="stat-label" data-i18n="statLessons">Lessons</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="stat-examples">200+</span>
+                    <span class="stat-label" data-i18n="statExamples">Code Examples</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="stat-exercises">50+</span>
+                    <span class="stat-label" data-i18n="statExercises">Exercises</span>
+                </div>
+            </div>
+            <div class="hero-cta">
+                <button id="start-learning-btn" class="btn btn-primary btn-lg" onclick="navigateToLessons()">
+                    <span data-i18n="btnStartLearning">Start Learning</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button id="view-curriculum-btn" class="btn btn-outline btn-lg" onclick="navigateToCurriculum()">
+                    <span data-i18n="btnViewCurriculum">View Curriculum</span>
+                </button>
+            </div>
+        </div>
+        <div class="hero-code-preview">
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="code-dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="code-filename">hello_world.py</span>
+                </div>
+                <pre class="code-body"><code id="hero-code"></code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Overview Section -->
+    <section id="curriculum" class="curriculum-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="curriculumTag">Curriculum</span>
+                <h2 class="section-title" data-i18n="curriculumTitle">Complete Learning Path</h2>
+                <p class="section-desc" data-i18n="curriculumDesc">
+                    Structured into 12 progressive modules, each building on previous knowledge. 
+                    From your first "Hello World" to building real-world applications.
+                </p>
+            </div>
+            <div class="curriculum-grid" id="curriculum-grid">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Lesson Content Section -->
+    <section id="lessons" class="lessons-section">
+        <div class="lessons-container">
+            <!-- Sidebar -->
+            <aside class="lessons-sidebar" id="lessons-sidebar">
+                <div class="sidebar-header">
+                    <h3 data-i18n="sidebarTitle">Course Modules</h3>
+                    <button id="sidebar-close" class="sidebar-close" aria-label="Close sidebar">✕</button>
+                </div>
+                <div class="sidebar-search">
+                    <input type="text" id="lesson-search" placeholder="Search lessons..." data-i18n-placeholder="sidebarSearch" aria-label="Search lessons">
+                </div>
+                <nav class="sidebar-nav" id="sidebar-nav">
+                    <!-- Populated by JavaScript -->
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="lesson-main" id="lesson-main">
+                <div class="lesson-topbar">
+                    <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle sidebar">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </button>
+                    <div class="lesson-breadcrumb" id="lesson-breadcrumb">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+                <article class="lesson-content" id="lesson-content">
+                    <!-- Populated by JavaScript -->
+                </article>
+                <div class="lesson-nav-footer" id="lesson-nav-footer">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <!-- Progress Section -->
+    <section id="progress" class="progress-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="progressTag">Your Progress</span>
+                <h2 class="section-title" data-i18n="progressTitle">Learning Dashboard</h2>
+                <p class="section-desc" data-i18n="progressDesc">Track your journey through the course. Complete lessons to unlock achievements.</p>
+            </div>
+            <div class="progress-dashboard" id="progress-dashboard">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="logo-icon">🐍</span>
+                <span>Python<span class="logo-accent">Mastery</span> Academy</span>
+            </div>
+            <p class="footer-text">
+                <span data-i18n="footerText">A comprehensive university-level Python programming course.</span><br>
+                <span data-i18n="footerText2">Designed for self-paced learning with professional-grade content.</span>
+            </p>
+            <div class="footer-bottom">
+                <span data-i18n="footerCopy">© 2026 Python Mastery Academy. For educational purposes.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="course-data.js"></script>
+    <script src="course-data-vi.js"></script>
+    <script src="i18n.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
